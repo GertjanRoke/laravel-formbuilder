@@ -1,0 +1,50 @@
+{
+  "name": "GertjanRoke/Laravel-formbuilder",
+  "description": "Users can create a dynamic form with validation and with export function or mailing",
+  "keywords": [
+    "formbuilder",
+    "dynamic"
+  ],
+  "homepage": "https://github.com/GertjanRoke/laravel-formbuilder",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Gertjan Roke",
+      "email": "g.a.roke90@gmail.com",
+      "homepage": "https://gertjanroke.nl",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.4"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~5.7"
+  },
+  "autoload": {
+    "psr-4": {
+      "GertjanRoke\\Formbuilder\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "GertjanRoke\\Formbuilder\\Test\\": "tests"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "GertjanRoke\\Formbuilder\\FormbuilderServiceProvider"
+      ],
+      "aliases": {
+        "Formbuilder": "GertjanRoke\\Formbuilder\\FormbuilderFacade"
+      }
+    }
+  }
+}
