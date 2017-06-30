@@ -24,7 +24,10 @@
   "autoload": {
     "psr-4": {
       "GertjanRoke\\Formbuilder\\": "src"
-    }
+    },
+    "files": [
+      "src/Support/Helpers.php"
+    ]
   },
   "autoload-dev": {
     "psr-4": {
