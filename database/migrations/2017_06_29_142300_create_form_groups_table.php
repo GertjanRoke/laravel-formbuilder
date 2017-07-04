@@ -18,10 +18,6 @@ class CreateFormGroupsTable extends Migration
             $table->unsignedInteger('parent_id')->nullable();
             $table->string('name')->nullable();
             $table->string('title');
-            $table->enum('type', [
-                'group',
-                'widget'
-            ]);
             $table->integer('sort')->default(999);
             $table->timestamps();
         });

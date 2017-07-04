@@ -40,10 +40,12 @@
             return {
                 form: {
                     name: '',
+                    type: 1,
                     groups: [],
                     fields: []
                 },
-                fieldTypes: this.getConfig()
+                fieldTypes: this.getConfig(),
+                formTypes: this.getFormTypes()
             }
         },
 
@@ -59,6 +61,28 @@
                 }).catch((error) => {
                     console.error(error);
                     this.fieldTypes = [];
+                });
+
+                this.$nextTick(() => {
+                    $('select').material_select();
+                });
+            },
+
+            getFormTypes() {
+                const pathArray = location.href.split('/');
+                let protocol = pathArray[0];
+                let host = pathArray[2];
+                let url = protocol + '//' + host + '/' + this.apiPrefix + '/form-types';
+
+                axios.get(url).then(({data}) => {
+                    this.formTypes = data;
+                }).catch((error) => {
+                    console.error(error);
+                    this.formTypes = [];
+                }).then(() => {
+                    this.$nextTick(() => {
+                        $('select').material_select();
+                    });
                 });
             },
         }

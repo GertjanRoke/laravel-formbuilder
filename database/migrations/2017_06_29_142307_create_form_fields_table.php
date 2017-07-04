@@ -19,6 +19,7 @@ class CreateFormFieldsTable extends Migration
             $table->enum('type', config('formbuilder.fields'));
             $table->string('name');
             $table->string('label')->nullable();
+            $table->string('default')->nullable();
             $table->string('placeholder')->nullable();
             $table->string('classes')->nullable();
             $table->string('style_id')->nullable();
